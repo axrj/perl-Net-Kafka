@@ -6,10 +6,10 @@ perl:
   - "5.30"
 sudo: required
 env:
-  - KAFKA_VERSION=2.3.0 LIBRDKAFKA_VERSION=1.1.0~1confluent5.3.1-1 KAFKA_BOOTSTRAP_SERVERS=localhost:9092 KAFKA_TEST_TOPIC=test KAFKA_TEST_TOPIC_PARTITIONS=8 KAFKA_CONSUMER_GROUP_PREFIX=net-kafka
+  - KAFKA_VERSION=2.3.0 LIBRDKAFKA_VERSION=1.1.0~1confluent6.0.1-1 KAFKA_BOOTSTRAP_SERVERS=localhost:9092 KAFKA_TEST_TOPIC=test KAFKA_TEST_TOPIC_PARTITIONS=8 KAFKA_CONSUMER_GROUP_PREFIX=net-kafka
 before_install:
-  - wget -qO - https://packages.confluent.io/deb/5.3/archive.key | sudo apt-key add -
-  - sudo add-apt-repository "deb [arch=amd64] https://packages.confluent.io/deb/5.3 stable main"
+  - wget -qO - https://packages.confluent.io/deb/6.0/archive.key | sudo apt-key add -
+  - sudo add-apt-repository "deb [arch=amd64] https://packages.confluent.io/deb/6.0 stable main"
   - sudo apt-get update -q
   - sudo apt-get install librdkafka-dev=$LIBRDKAFKA_VERSION
   - mkdir kafka && cd kafka
